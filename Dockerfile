@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y  --no-install-recommends \
     ca-certificates
 
 RUN wget https://github.com/badaix/snapcast/releases/download/v0.29.0/snapserver_0.29.0-1_arm64_bookworm.deb
-RUN apt install ./snapserver_0.29.0-1_arm64_bookworm.deb
+RUN apt install -y ./snapserver_0.29.0-1_arm64_bookworm.deb
 
 # clean up to minimize image size
 RUN rm -rf /var/cache/apt/archives && rm -rf /usr/share/doc && rm -rf /usr/share/man
