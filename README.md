@@ -42,7 +42,7 @@ services:
     image: solidhal/lssc
     container_name: lssc
     volumes:
-      - <path-to-snapcast.conf>:/snapcast.conf
+      - <path-to-snapserver.conf>:/snapserver.conf
     restart: "no"
     environment:
       - PUID=1002

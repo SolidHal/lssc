@@ -28,6 +28,8 @@ User gid:    $(id -g abc)
 
 # take ownership of our working directories and files
 chown abc:abc /snapserver.conf
+mkdir -p /config
+chown abc:abc /config
 
 # run the actual script with proper permissions
 exec su abc -s /usr/bin/snapserver -c /snapserver.conf
