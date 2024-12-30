@@ -15,9 +15,13 @@ docker build -t solidhal/lssc .
 
 ## snapserver.conf example
 
-```
+see snapserver.conf.example
 
+essentially we just add
 ```
+librespot:///usr/bin/librespot?name=<name>[&username=<my username>&password=<my password>][&devicename=Snapcast][&bitrate=320][&wd_timeout=7800][&volume=100][&onevent=""][&normalize=false][&autoplay=false][&cache=""][&disable_audio_cache=false][&killall=false][&params=extra-params]
+```
+under `[stream]` in the default snapserver.conf
 
 ## run example
 
@@ -32,5 +36,15 @@ solidhal/lssc
 ## docker compose example
 
 ```
-
+version: '3.5'
+services:
+  lssc:
+    image: solidhal/lssc
+    container_name: lssc
+    volumes:
+      - <path-to-snapcast.conf>:/snapcast.conf
+    restart: "no"
+    environment:
+      - PUID=1002
+      - PGID=1002
 ```
