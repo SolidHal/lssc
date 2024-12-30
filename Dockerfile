@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y  --no-install-recommends \
     wget \
     python3 \
     git \
-    ffmpeg
+    ffmpeg \
+    ca-certificates
 
 RUN wget https://github.com/badaix/snapcast/releases/download/v0.29.0/snapserver_0.29.0-1_arm64_bookworm.deb
 RUN apt install ./snapserver_0.29.0-1_arm64_bookworm.deb
